@@ -1,5 +1,4 @@
 from biudzetas import Biudzetas
-import django
 
 biudzetas = Biudzetas()
 
