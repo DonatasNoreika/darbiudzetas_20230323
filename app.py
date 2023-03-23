@@ -20,5 +20,5 @@ while True:
         case 4:
             biudzetas.parodyti_ataskaita()
         case 0:
-            print("Viso gero")
+            print("Viso gero, brangusis žmogau")
             break
