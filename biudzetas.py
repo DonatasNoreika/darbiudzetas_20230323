@@ -19,6 +19,10 @@ class Biudzetas:
         with open('zurnalas.pkl', 'wb') as file:
             pickle.dump(self.zurnalas, file)
 
+    def istrinti_irasa(self, index):
+        self.zurnalas.pop(index)
+        self._irasyti_zurnala()
+
     def prideti_pajamu_irasa(self, suma, siuntejas, info):
         irasas = PajamuIrasas(suma, siuntejas, info)
         self.zurnalas.append(irasas)

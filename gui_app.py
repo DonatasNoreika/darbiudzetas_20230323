@@ -20,17 +20,23 @@ def ivesti():
     suma_entry.delete(0, END)
     atnaujinti_listbox()
 
-langas.geometry("250x200")
+def istrinti():
+    biudzetas.istrinti_irasa(boksas_listbox.curselection()[0])
+    atnaujinti_listbox()
+
+langas.geometry("250x250")
 suma_label = Label(langas, text="Įrašykite sumą")
 suma_entry = Entry(langas)
 suma_button = Button(langas, text="Įvesti", command=ivesti)
 boksas_listbox = Listbox(langas)
 boksas_listbox.insert(END, *biudzetas.zurnalas)
 balansas_label = Label(langas, text=f"Balansas: {biudzetas.gauti_balansa()}")
+trinti_button = Button(langas, text="Ištrinti", command=istrinti)
 
 suma_label.grid(row=0, column=0)
 suma_entry.grid(row=0, column=1)
 suma_button.grid(row=0, column=2)
 balansas_label.grid(row=1, columnspan=3)
 boksas_listbox.grid(row=2, columnspan=3)
+trinti_button.grid(row=3, columnspan=3)
 langas.mainloop()
