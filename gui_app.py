@@ -7,9 +7,10 @@ langas = Tk()
 
 biudzetas = Biudzetas()
 
-def atnaujinti_listbox():
+def atnaujinti_listbox_balansa():
     boksas_listbox.delete(0, END)
     boksas_listbox.insert(END, *biudzetas.zurnalas)
+    balansas_label['text'] = f"Balansas: {biudzetas.gauti_balansa()}"
 
 def ivesti():
     suma = float(suma_entry.get())
@@ -18,11 +19,11 @@ def ivesti():
     else:
         biudzetas.prideti_islaidu_irasa(abs(suma), "", "")
     suma_entry.delete(0, END)
-    atnaujinti_listbox()
+    atnaujinti_listbox_balansa()
 
 def istrinti():
     biudzetas.istrinti_irasa(boksas_listbox.curselection()[0])
-    atnaujinti_listbox()
+    atnaujinti_listbox_balansa()
 
 langas.geometry("250x250")
 suma_label = Label(langas, text="Įrašykite sumą")
